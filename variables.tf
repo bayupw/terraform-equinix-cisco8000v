@@ -40,6 +40,12 @@ variable "byol" {
   default     = true
 }
 
+variable "core_count" {
+  description = "Number of CPU cores used by device."
+  type        = number
+  default     = 2
+}
+
 variable "device_name" {
   description = "Equinix Network Device name."
   type        = string
@@ -52,57 +58,38 @@ variable "device_hostname" {
   default     = "mycisco8000v"
 }
 
-
-variable "throughput" {
-  description = "."
-  type        = number
-  default     = 500
-}
-
-variable "throughput_unit" {
-  description = "."
-  type        = string
-  default     = "Mbps"
-}
-
 variable "type_code" {
   description = "."
   type        = string
   default     = "C8000V"
 }
 
-variable "core_count" {
-  description = "."
-  type        = number
-  default     = 2
-}
-
 variable "package_code" {
-  description = "."
+  description = "Device software package code."
   type        = string
   default     = "network-essentials"
 }
 
-variable "notifications" {
-  description = "."
-  type        = list(string)
-  default     = ["myemail@equinix.com"]
-}
-
 variable "device_version" {
-  description = "."
+  description = "Device software software version."
   type        = string
   default     = "17.06.01a"
 }
 
+variable "notifications" {
+  description = "List of email addresses that will receive device status notifications."
+  type        = list(string)
+  default     = ["myemail@equinix.com"]
+}
+
 variable "username" {
-  description = "."
+  description = "username associated with given key."
   type        = string
   default     = "eqxadmin"
 }
 
 variable "ssh_key_name" {
-  description = "."
+  description = "Existing SSH key name."
   type        = string
   default     = "key-name"
 }
