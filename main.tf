@@ -37,8 +37,8 @@ resource "equinix_network_device" "this" {
   account_number = data.equinix_network_account.this.number
 
   ssh_key {
-    username = var.username
-    key_name = var.ssh_key_name
+    username = var.ssh_username
+    key_name = local.ssh_key_name
   }
 
   acl_template_id = local.acl_template_id
@@ -46,4 +46,5 @@ resource "equinix_network_device" "this" {
 
 locals {
   acl_template_id = var.create_acl ? equinix_network_acl_template.this[0].id : var.acl_template_id
+  ssh_key_name    = var.create_ssh_key ? equinix_network_ssh_key.this[0].name : var.ssh_key_name
 }

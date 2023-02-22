@@ -10,6 +10,12 @@ variable "create_acl" {
   default     = false
 }
 
+variable "create_ssh_key" {
+  description = "Set to true to create a new key."
+  type        = bool
+  default     = false
+}
+
 variable "acl_template_id" {
   description = "Existing ACL template ID."
   type        = string
@@ -82,14 +88,20 @@ variable "notifications" {
   default     = ["myemail@equinix.com"]
 }
 
-variable "username" {
-  description = "username associated with given key."
+variable "ssh_username" {
+  description = "SSH username."
   type        = string
-  default     = "eqxadmin"
+  default     = "csradmin1"
 }
 
 variable "ssh_key_name" {
-  description = "Existing SSH key name."
+  description = "SSH key name."
   type        = string
-  default     = "key-name"
+  default     = "mykey"
+}
+
+variable "ssh_public_key" {
+  description = "SSH public key."
+  type        = string
+  default     = null
 }
