@@ -23,7 +23,7 @@ module "wanrouter" {
   device_name     = "tf-cisco8000v-p"
   device_hostname = "cisco8000v-primary"
   notifications   = ["myemail@equinix.com"]
-  username        = "eqxadmin"
+  ssh_username    = "eqxadmin"
   ssh_key_name    = "eqxsshkey"
   acl_template_id = "0bff6e05-f0e7-44cd-804a-25b92b835f8b"
 }
